@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= pageTitle %>
+  </title>
+  <link rel="stylesheet" href="/register.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/navbar') %>
+      <h1>Register your home here:</h1>
+  </header>
+  <main>
+    <form action="/host/add-home" method="POST">
+      <input type="text" name="houseName" placeholder="Home Name" />
+
+      <input type="text" name="price" placeholder="price per night" />
+
+      <input type="text" name="location" placeholder="location" />
+
+      <input type="text" name="Rating" placeholder="Rating" />
+
+      <input type="text" name="PhototURL" placeholder="Enter photo url" />
+
+      <input type="submit" value="Add Home" />
+  </main>
+</body>
+
+</html>

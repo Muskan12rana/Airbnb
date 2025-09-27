@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= pageTitle %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/home.css" />
+</head>
+
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="content-wrapper">
+      <main>
+        <h1>WELCOME TO AIRBNB</h1>
+
+
+
+
+        <a href="/host/add-home">Add Home</a>
+
+        <div class="row">
+          <% registeredHomes.forEach(home=> { %>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="<%= home.PhotoURL %>" class="card-img-top" alt="<%= home.houseName %>">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= home.houseName %>
+                  </h5>
+                  <p class="card-text">
+                    <strong>Price:</strong> ₹<%= home.price %><br>
+                      <strong>Location:</strong>
+                      <%= home.location %><br>
+                        <strong>Rating:</strong> ⭐ <%= home.Rating %>/5
+                  </p>
+                  <a href="#" class="btn btn-primary">BOOK</a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+
+
+
+
+
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
